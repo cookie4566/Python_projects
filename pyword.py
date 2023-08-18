@@ -13,8 +13,7 @@ def hello():
 def placeHolder():
     file = Toplevel(root)
     button = Button(file, text="This is a place holder")
-    button.pack()
-
+  
 
 
 # Creates a TK object
@@ -22,15 +21,22 @@ root = Tk()
 frm = ttk.Frame(root, padding= 20)
 frm.grid()
 
+# Menu toolbar
+# creates a menu object
 mennubar = Menu(root)
+# 
 filem = Menu(mennubar, tearoff=0)
+# File pull-down section
+mennubar.add_cascade(menu= filem, label = "File")
 filem.add_command(label="New", command= placeHolder)
-filem.add_command()
-# ////////Buttons
+filem.add_command(label = "Open", command = placeHolder)
+filem.add_command(label = "Save", command = placeHolder)
+filem.add_command(label = "Save as...", command = placeHolder)
+filem.add_command(label = "Close", command = root.destroy)
 
-quit = ttk.Button(frm, text = 'quit', command= root.destroy).grid(column = 1, row = 0)
-save = ttk.Button(frm, text = 'save', command = root.destroy).grid(column = 1, row = 1)
-post = ttk.Button 
+filem.add_separator()
+
+filem.add_command(label = "Exit", command = root.destroy)
 
 # Text field 
 text = Text().grid(column=0, row=1)
