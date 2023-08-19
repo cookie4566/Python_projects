@@ -38,6 +38,14 @@ filem.add_separator()
 
 filem.add_command(label = "Exit", command = root.destroy)
 
+# Edit pull-down menu
+edit = Menu(mennubar, tearoff=0)
+mennubar.add_cascade(label="Edit", menu=edit)
+edit.add_command(label="Cut", command=placeHolder)
+edit.add_command(label="Copy", command=placeHolder)
+edit.add_command(label="Paste", command=placeHolder)
+edit.add_command(label="Delete", command=placeHolder)
+edit.add_command(label="Select All", command=placeHolder)
 # Text field 
 text = Text().grid(column=0, row=1)
 
