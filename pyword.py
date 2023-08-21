@@ -4,7 +4,7 @@
 #8/16/2023
 from tkinter import *
 from tkinter import ttk
-from tkinter.filedialog import asksaveasfile
+from tkinter.filedialog import *
 ## import tkMessageBox
 # function for callbacks
 def hello():
@@ -15,7 +15,8 @@ def placeHolder():
     file = Toplevel(root)
     button = Button(file, text="This is a place holder")
     button.pack()
-    
+
+# function for saving .txt files
 def saved():
     file = asksaveasfile(mode = 'w', defaultextension=".txt")
     if file is None:
@@ -23,6 +24,13 @@ def saved():
     saveText = str(text.get(1.0, END))
     file.write(saveText)
     file.close()
+# Function for opening .txt files  
+def open():
+    file = askopenfile(mode='r', filetypes=[('Text files','*.txt')])
+    if file is not None:
+        content = file.readline()
+        print(content)
+    
                 
     
   
@@ -30,6 +38,8 @@ def saved():
 
 # Creates a TK object
 root = Tk()
+root.title('Pyword!')
+root.geometry('600x300')
 frm = ttk.Frame(root, padding= 20)
 
 
@@ -41,9 +51,9 @@ filem = Menu(mennubar, tearoff=0)
 # File pull-down section
 mennubar.add_cascade(menu= filem, label = "File")
 filem.add_command(label="New", command= placeHolder)
-filem.add_command(label = "Open", command = placeHolder)
+filem.add_command(label = "Open", command = open)
 filem.add_command(label = "Save", command = saved)
-filem.add_command(label = "Save as...", command = placeHolder)
+filem.add_command(label = "Save as...", command = saved)
 filem.add_command(label = "Close", command = root.destroy)
 
 filem.add_separator()
