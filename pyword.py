@@ -7,15 +7,18 @@ from tkinter import ttk
 from tkinter.filedialog import *
 ## import tkMessageBox
 # function for callbacks
-def hello():
-    tkMessageBox.showinfo("Saved!", "Sike!")
+
     
 # function for menu items
 def placeHolder():
     file = Toplevel(root)
     button = Button(file, text="This is a place holder")
     button.pack()
-
+    
+def Aboot():
+    file = Toplevel(root)
+    button = Button (file, text="This is where I would put any questions that were frequent and asked.")
+    button.pack()
 # function for saving .txt files
 def saved():
     file = asksaveasfile(mode = 'w', defaultextension=".txt")
@@ -28,8 +31,9 @@ def saved():
 def open():
     file = askopenfile(mode='r', filetypes=[('Text files','*.txt')])
     if file is not None:
-        content = file.readline()
-        print(content)
+        text
+        text.insert(1.0,file.read())
+        
     
                 
     
@@ -68,6 +72,10 @@ edit.add_command(label="Copy", command=placeHolder)
 edit.add_command(label="Paste", command=placeHolder)
 edit.add_command(label="Delete", command=placeHolder)
 edit.add_command(label="Select All", command=placeHolder)
+
+about = Menu(mennubar, tearoff=0)
+mennubar.add_cascade(label="About", menu=about)
+about.add_command(label = "FAQ", command=Aboot)
 
 
 # Text field 
