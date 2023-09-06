@@ -14,11 +14,12 @@ def placeHolder():
     file = Toplevel(root)
     button = Button(file, text="This is a place holder")
     button.pack()
-    
+# Function for the about section
 def Aboot():
     file = Toplevel(root)
     button = Button (file, text="This is where I would put any questions that were frequent and asked.")
     button.pack()
+    
 # function for saving .txt files
 def saved():
     file = asksaveasfile(mode = 'w', defaultextension=".txt")
@@ -33,6 +34,11 @@ def open():
     if file is not None:
         text
         text.insert(1.0,file.read())
+# Function for NEW files :)
+def new():
+    Input = entry.get()
+    file = str("filepath" + Input + ".txt")
+    text = open()
         
     
                 
@@ -45,6 +51,7 @@ root = Tk()
 root.title('Pyword!')
 root.geometry('600x300')
 frm = ttk.Frame(root, padding= 20)
+entry = Entry(root)
 
 
 # Menu toolbar
@@ -54,7 +61,7 @@ mennubar = Menu(root)
 filem = Menu(mennubar, tearoff=0)
 # File pull-down section
 mennubar.add_cascade(menu= filem, label = "File")
-filem.add_command(label="New", command= placeHolder)
+filem.add_command(label="New", command= new)
 filem.add_command(label = "Open", command = open)
 filem.add_command(label = "Save", command = saved)
 filem.add_command(label = "Save as...", command = saved)
