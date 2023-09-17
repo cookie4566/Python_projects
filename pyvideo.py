@@ -22,7 +22,7 @@ root.geometry('1000x500')
 
 # Initilazing TkinterVideo and loading a test video/loading video
 vid = TkinterVideo(master = root, scaled = True)
-vid.load(r"[ViViD REAL] Gundam AGE 3 OP.mp4")
+vid.load(r"y2mate.is - 4K Planet Earth Spinning in Space Free HD Videos No Copyright-_Sl8diqCAFw-1080pp-1694795300.mp4")
 vid.pack(fill='both',expand='true')
 
 # Buttons used for testing tkVideoPlayer
