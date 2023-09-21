@@ -4,6 +4,16 @@
 from tkinter import *
 from tkinter import ttk
 
+#       METHODS             #
+
+# new window
+def newWindow():
+    error = Toplevel(root)
+    error.title("test")
+    error.geometry('500x500')
+    return 
+
+
 # window
 root = Tk()
 root.title('Bank of inritum')
@@ -16,7 +26,7 @@ header = ttk.Frame(content, borderwidth=4, relief="ridge",width=250,height=150)
 h1 = ttk.Label(content, text = "Bank of inritum")
 user = ttk.Label(content, text="User name/E-mail")
 pw = ttk.Label(content, text="Password")
-enter = ttk.Button(content, text = "Enter", command= root.destroy)
+enter = ttk.Button(content, text = "Enter", command= newWindow)
 username = ttk.Entry(content,textvariable=StringVar)
 password = ttk.Entry(content, show="*",textvariable=StringVar)
 
