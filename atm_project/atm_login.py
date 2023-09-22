@@ -6,16 +6,22 @@ from tkinter import ttk
 
 #       METHODS             #
 
-# new window
+# new window with if statment
 def newWindow():
+# vaild user namer/password
     if password.get() == 'test' and username.get() == 'cookie':
         good = Toplevel(root)
         good.title("Good")
         good.geometry('500x500')
+# Invalid username/password
     else:
         error = Toplevel(root)
         error.title("test")
         error.geometry('200x200')
+        error_exit = ttk.Button(error,text='Exit', command=error.destroy)
+        errorm = ttk.Label(error,text="Wrong Password/Username")
+        error_exit.grid(row=1,column=0)
+        errorm.grid(row=0,column=0)
     return 
 
 
