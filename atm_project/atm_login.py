@@ -8,9 +8,14 @@ from tkinter import ttk
 
 # new window
 def newWindow():
-    error = Toplevel(root)
-    error.title("test")
-    error.geometry('500x500')
+    if password.get() == 'test' and username.get() == 'cookie':
+        good = Toplevel(root)
+        good.title("Good")
+        good.geometry('500x500')
+    else:
+        error = Toplevel(root)
+        error.title("test")
+        error.geometry('200x200')
     return 
 
 
