@@ -7,6 +7,11 @@ from tkinter import ttk
 #       METHODS             #
 
 # new window with if statment
+def newAccount():
+    account = Toplevel(root)
+    account.title('New Account')
+    account.geometry('450x450')
+
 def newWindow():
 # vaild user namer/password
     if password.get() == 'test' and username.get() == 'cookie':
@@ -18,12 +23,17 @@ def newWindow():
         error = Toplevel(root)
         error.title("test")
         error.geometry('200x200')
+        new_account = ttk.Button(error, text='Create Account', command= newAccount,)
         error_exit = ttk.Button(error,text='Exit', command=error.destroy)
         errorm = ttk.Label(error,text="Wrong Password/Username")
         error_exit.grid(row=1,column=0)
+        new_account.grid(row=2, column=0)
         errorm.grid(row=0,column=0)
     return 
 
+# Bank funds
+savings_account = 500
+checkings_account = 15
 
 # window
 root = Tk()
@@ -40,6 +50,11 @@ pw = ttk.Label(content, text="Password")
 enter = ttk.Button(content, text = "Enter", command= newWindow)
 username = ttk.Entry(content,textvariable=StringVar)
 password = ttk.Entry(content, show="*",textvariable=StringVar)
+new_account = ttk.Button(content, text='Forgot password/E-Mail?', command=newAccount)
+
+# grid config
+root.grid_rowconfigure(0, weight=1)
+root.grid_columnconfigure(0, weight=1)
 
 # grid placement
 content.grid(column=0, row=0, rowspan=5)
@@ -50,6 +65,7 @@ username.grid(column=1, row=3)
 password.grid(column=1, row=4)
 user.grid(column=0, row=3)
 pw.grid(column=0, row=4)
+new_account.grid(column=2,row=5)
 
 # main loop
 root.mainloop()
