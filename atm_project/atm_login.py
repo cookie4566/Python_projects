@@ -6,18 +6,25 @@ from tkinter import ttk
 
 #       METHODS             #
 
+# Main banking menu.
+
+
 # new window with if statment
 def newAccount():
     account = Toplevel(root)
     account.title('New Account')
-    account.geometry('450x450')
+    account.geometry('200x200')
+    new_user = ttk.Entry(account,textvariable=StringVar)
+    new_user.grid(row=0, column=0)
 
 def newWindow():
 # vaild user namer/password
     if password.get() == 'test' and username.get() == 'cookie':
         good = Toplevel(root)
         good.title("Good")
-        good.geometry('500x500')
+        good.geometry('200x200')
+        welcome_user = ttk.Label(good, text="Welcome "+ username.get() + "," + "How are you today!")
+        welcome_user.grid(row=0,column=0)
 # Invalid username/password
     else:
         error = Toplevel(root)
