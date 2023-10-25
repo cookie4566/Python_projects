@@ -14,8 +14,16 @@ def newAccount():
     account = Toplevel(root)
     account.title('New Account')
     account.geometry('200x200')
+    nu_user_name = ttk.Label(account, text='New Email/User')
+    nu_user_password = ttk.Label(account, text='New User Password')
     new_user = ttk.Entry(account,textvariable=StringVar)
-    new_user.grid(row=0, column=0)
+    new_user_passwod = ttk.Entry(account, textvariable=StringVar)
+    new_user_button = ttk.Button(account,text='Enter')
+    nu_user_name.grid(row=0,column=0)
+    nu_user_password.grid(row=1,column=0)
+    new_user.grid(row=0, column=1)
+    new_user_button.grid(row=2,column=1)
+    new_user_passwod.grid(row=1, column=1)
 
 def newWindow():
 # vaild user namer/password
