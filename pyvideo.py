@@ -37,7 +37,7 @@ pause.pack(side='right')
 #menu
 menu = Menu(root)
 fmenu = Menu(menu, tearoff=0)
-menu.add_cascade(menu = fmenu, label = 'placeholder')
+menu.add_cascade(menu = fmenu, label = 'file')
 fmenu.add_command(label = "open",command = 'open')
 
 

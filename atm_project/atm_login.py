@@ -10,6 +10,7 @@ from tkinter import ttk
 
 
 # new window with if statment
+
 def newAccount():
     account = Toplevel(root)
     account.title('New Account')
@@ -18,13 +19,23 @@ def newAccount():
     nu_user_password = ttk.Label(account, text='New User Password')
     new_user = ttk.Entry(account,textvariable=StringVar)
     new_user_passwod = ttk.Entry(account, textvariable=StringVar)
-    new_user_button = ttk.Button(account,text='Enter')
+    new_user_button = ttk.Button(account,text='Enter', command=newAccountAdd(new_user.get,new_user_passwod.get))
     nu_user_name.grid(row=0,column=0)
     nu_user_password.grid(row=1,column=0)
     new_user.grid(row=0, column=1)
-    new_user_button.grid(row=2,column=1)
     new_user_passwod.grid(row=1, column=1)
-
+    new_user_button.grid(row=2,column=1)
+    
+# function for storing user data and information(I could do this using classes)    
+def newAccountAdd(user,password):
+    user = user
+    password = password
+    
+    with open('data.txt', 'w') as file:
+        file.write(user)
+        file.write(password)
+   
+# Function for login(?)
 def newWindow():
 # vaild user namer/password
     if password.get() == 'test' and username.get() == 'cookie':
