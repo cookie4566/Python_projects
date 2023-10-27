@@ -28,12 +28,12 @@ def newAccount():
     
 # function for storing user data and information(I could do this using classes)    
 def newAccountAdd(user,password):
-    user = user
-    password = password
+    user1 = user
+    password1 = password
     
-    with open('data.txt', 'w') as file:
-        file.write(user)
-        file.write(password)
+    with open('data.txt', 'wt') as file:
+        file.write(str(user1))
+        file.write(str(password1))
    
 # Function for login(?)
 def newWindow():
