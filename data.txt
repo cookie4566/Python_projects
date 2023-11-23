@@ -1,1 +1,1 @@
-<bound method Entry.get of <tkinter.ttk.Entry object .!toplevel3.!entry>><bound method Entry.get of <tkinter.ttk.Entry object .!toplevel3.!entry2>>
+<bound method Entry.get of <tkinter.ttk.Entry object .!toplevel2.!entry>><bound method Entry.get of <tkinter.ttk.Entry object .!toplevel2.!entry2>>

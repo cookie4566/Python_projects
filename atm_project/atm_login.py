@@ -11,6 +11,15 @@ from tkinter import ttk
 
 # new window with if statment
 
+# checking acconut balance
+def money():
+    dough = 2000
+    return dough
+
+def checkingAccount(cash):
+    money = cash
+    return str(money)
+
 def newAccount():
     account = Toplevel(root)
     account.title('New Account')
@@ -19,7 +28,7 @@ def newAccount():
     nu_user_password = ttk.Label(account, text='New User Password')
     new_user = ttk.Entry(account,textvariable=StringVar)
     new_user_passwod = ttk.Entry(account, textvariable=StringVar)
-    new_user_button = ttk.Button(account,text='Enter', command=newAccountAdd(new_user.get,new_user_passwod.get))
+    new_user_button = ttk.Button(account,text='Enter', command= lambda: [newAccountAdd(new_user.get,new_user_passwod.get), account.destroy()])
     nu_user_name.grid(row=0,column=0)
     nu_user_password.grid(row=1,column=0)
     new_user.grid(row=0, column=1)
@@ -44,6 +53,8 @@ def newWindow():
         good.geometry('200x200')
         welcome_user = ttk.Label(good, text="Welcome "+ username.get() + "," + "How are you today!")
         welcome_user.grid(row=0,column=0)
+        checking = ttk.Label(good, text = "you have " + str(checkingAccount(500)))
+        checking.grid(row=1,column=1)
 # Invalid username/password
     else:
         error = Toplevel(root)
